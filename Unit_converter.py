@@ -10,6 +10,19 @@ def celsius_to_kelvin(celsius):
 def kelvin_to_celsius(kelvin):
     return kelvin - 273.15
 
+def meters_to_kilometers(meters):
+    return meters / 1000
+
+def kilometers_to_meters(kilometers):
+    return kilometers * 1000
+
+def miles_to_feet(miles):
+    return miles * 5280
+
+def feet_to_miles(feet):
+    return feet / 5280
+
+
 if __name__ == "__main__":
     print("Temperature Converter")
     print("----------------------")
@@ -17,6 +30,10 @@ if __name__ == "__main__":
     print("2. Fahrenheit to Celsius")
     print("3. Celsius to Kelvin")
     print("4. Kelvin to Celsius")
+    print("5. Meters to Kilometers")
+    print("6. Kilometers to Meters")
+    print("7. Miles to Feet")
+    print("8. Feet to Miles")
     
     choice = input("Enter your choice: ")
     
@@ -32,5 +49,17 @@ if __name__ == "__main__":
     elif choice == "4":
         temp = float(input("Enter temperature in Kelvin: "))
         print(f"{temp}K = {kelvin_to_celsius(temp)}°C")
+    elif choice == "5":
+        length = float(input("Enter length in meters: "))
+        print(f"{length}m = {meters_to_kilometers(length)}km")
+    elif choice == "6":
+        length = float(input("Enter length in kilometers: "))
+        print(f"{length}km = {kilometers_to_meters(length)}m")
+    elif choice == "7":
+        length = float(input("Enter length in miles: "))
+        print(f"{length} miles = {miles_to_feet(length)} feet")
+    elif choice == "8":
+        length = float(input("Enter length in feet: "))
+        print(f"{length} feet = {feet_to_miles(length)} miles")
     else:
         print("Invalid choice!")
