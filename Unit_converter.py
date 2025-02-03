@@ -21,7 +21,17 @@ def miles_to_feet(miles):
 
 def feet_to_miles(feet):
     return feet / 5280
+def kilograms_to_grams(kg):
+    return kg * 1000
 
+def grams_to_kilograms(g):
+    return g / 1000
+
+def pounds_to_ounces(pounds):
+    return pounds * 16
+
+def ounces_to_pounds(ounces):
+    return ounces / 16
 
 if __name__ == "__main__":
     print("Temperature Converter")
@@ -34,7 +44,10 @@ if __name__ == "__main__":
     print("6. Kilometers to Meters")
     print("7. Miles to Feet")
     print("8. Feet to Miles")
-    
+    print("9. Kilograms to Grams")
+    print("10. Grams to Kilograms")
+    print("11. Pounds to Ounces")
+    print("12. Ounces to Pounds")
     choice = input("Enter your choice: ")
     
     if choice == "1":
@@ -61,5 +74,17 @@ if __name__ == "__main__":
     elif choice == "8":
         length = float(input("Enter length in feet: "))
         print(f"{length} feet = {feet_to_miles(length)} miles")
+    elif choice == "9":
+        weight = float(input("Enter weight in kilograms: "))
+        print(f"{weight}kg = {kilograms_to_grams(weight)}g")
+    elif choice == "10":
+        weight = float(input("Enter weight in grams: "))
+        print(f"{weight}g = {grams_to_kilograms(weight)}kg")
+    elif choice == "11":
+        weight = float(input("Enter weight in pounds: "))
+        print(f"{weight} lbs = {pounds_to_ounces(weight)} oz")
+    elif choice == "12":
+        weight = float(input("Enter weight in ounces: "))
+        print(f"{weight} oz = {ounces_to_pounds(weight)} lbs")
     else:
         print("Invalid choice!")
