@@ -32,6 +32,17 @@ def pounds_to_ounces(pounds):
 
 def ounces_to_pounds(ounces):
     return ounces / 16
+def seconds_to_minutes(seconds):
+    return seconds / 60
+
+def minutes_to_hours(minutes):
+    return minutes / 60
+
+def hours_to_days(hours):
+    return hours / 24
+
+def days_to_weeks(days):
+    return days / 7
 
 if __name__ == "__main__":
     print("Temperature Converter")
@@ -48,6 +59,11 @@ if __name__ == "__main__":
     print("10. Grams to Kilograms")
     print("11. Pounds to Ounces")
     print("12. Ounces to Pounds")
+    print("13. Seconds to Minutes")
+    print("14. Minutes to Hours")
+    print("15. Hours to Days")
+    print("16. Days to Weeks")
+    
     choice = input("Enter your choice: ")
     
     if choice == "1":
@@ -86,5 +102,19 @@ if __name__ == "__main__":
     elif choice == "12":
         weight = float(input("Enter weight in ounces: "))
         print(f"{weight} oz = {ounces_to_pounds(weight)} lbs")
+    
+    elif choice == "13":
+        time = float(input("Enter time in seconds: "))
+        print(f"{time} seconds = {seconds_to_minutes(time)} minutes")
+    elif choice == "14":
+        time = float(input("Enter time in minutes: "))
+        print(f"{time} minutes = {minutes_to_hours(time)} hours")
+    elif choice == "15":
+        time = float(input("Enter time in hours: "))
+        print(f"{time} hours = {hours_to_days(time)} days")
+    elif choice == "16":
+        time = float(input("Enter time in days: "))
+        print(f"{time} days = {days_to_weeks(time)} weeks")
     else:
         print("Invalid choice!")
+
