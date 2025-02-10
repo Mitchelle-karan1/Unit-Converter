@@ -125,7 +125,69 @@ elif choice == "16":
             print(f"{time} days = {days_to_weeks(time)} weeks")
 elif choice == "17":
             print("Exiting the converter. Goodbye!")
-            break
+            
 else:
     print("Invalid choice! Please enter a number between 1 and 17.")
+    
+    import os
+
+def celsius_to_fahrenheit(celsius):
+    return (celsius * 9/5) + 32
+
+def fahrenheit_to_celsius(fahrenheit):
+    return (fahrenheit - 32) * 5/9
+
+def log_conversion(conversion):
+    with open("conversion_history.txt", "a") as file:
+        file.write(conversion + "\n")
+
+def display_conversion_history():
+    if os.path.exists("conversion_history.txt"):
+        with open("conversion_history.txt", "r") as file:
+            history = file.readlines()
+            if history:
+                print("\nConversion History:")
+                for line in history:
+                    print(line.strip())
+            else:
+                print("\nNo previous conversions found.")
+    else:
+        print("\nNo conversion history available.")
+
+def get_numeric_input(prompt):
+    while True:
+        try:
+            return float(input(prompt))
+        except ValueError:
+            print("Invalid input! Please enter a numeric value.")
+
+if __name__ == "__main__":
+    while True:
+        print("\nUnit Converter")
+        print("----------------------")
+        print("1. Celsius to Fahrenheit")
+        print("2. Fahrenheit to Celsius")
+        print("3. View Conversion History")
+        print("4. Exit")
+        
+        choice = input("Enter your choice: ")
+        
+        if choice == "1":
+            temp = get_numeric_input("Enter temperature in Celsius: ")
+            result = f"{temp}°C = {celsius_to_fahrenheit(temp)}°F"
+            print(result)
+            log_conversion(result)
+        elif choice == "2":
+            temp = get_numeric_input("Enter temperature in Fahrenheit: ")
+            result = f"{temp}°F = {fahrenheit_to_celsius(temp)}°C"
+            print(result)
+            log_conversion(result)
+        elif choice == "3":
+            display_conversion_history()
+        elif choice == "4":
+            print("Exiting the converter. Goodbye!")
+            break
+        else:
+            print("Invalid choice! Please enter a number between 1 and 4.")
+
 
